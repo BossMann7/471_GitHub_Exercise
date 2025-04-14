@@ -188,6 +188,10 @@ E* BST<Key, E>::findhelp(BSTNode<Key, E>* root,
   }
 }
 
+
+
+
+
 // Print out a BST
 template <typename Key, typename E>
 void BST<Key, E>::
@@ -196,4 +200,13 @@ printhelp(BSTNode<Key, E>* root, int level) const {
   printhelp(root->left(), level+1);   // Do left subtree
   visit(root);						  // Print node value
   printhelp(root->right(), level+1);  // Do right subtree
+}
+
+template <typename Key, typename E>
+void BST<Key, E>::
+printPreOrder(BSTNode<Key, E>* root, int level) const {
+    if (root == NULL) return;           // Empty tree
+    visit(root);
+    printPreOrder(root->left(), level + 1);   // Do left subtree
+    printPreOrder(root->right(), level + 1);  // Do right subtree
 }
