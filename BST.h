@@ -194,6 +194,6 @@ void BST<Key, E>::
 printhelp(BSTNode<Key, E>* root, int level) const {
   if (root == NULL) return;           // Empty tree
   printhelp(root->left(), level+1);   // Do left subtree
-  visit(root);						  // Print node value
   printhelp(root->right(), level+1);  // Do right subtree
+  visit(root);						  // Print node value
 }
